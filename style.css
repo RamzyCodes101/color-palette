@@ -77,7 +77,7 @@ h1::after {
 .color-box{
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 3px 10px rgba(0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0.1);
     transition: transfrom 0.2s;
 }
 
@@ -112,4 +112,10 @@ h1::after {
 
 .copy-btn:hover {
     color: #667eea;
+}
+
+@media(max-width:768px) {
+    .palette-container {
+         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
 }
