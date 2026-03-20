@@ -10,6 +10,11 @@ paletteContainer.addEventListener("click", function(e){
         navigator.clipboard.writeText(hexValue)
         .then (() => showCopySuccess())
         .catch((err) => console.log(err))
+    } else if(e.target.classList.contains("color")){
+        const hexValue = e.target.nextElementSibling.querySelector(".hex-value").textContent
+         navigator.clipboard.writeText(hexValue)
+        .then (() => showCopySuccess())
+        .catch((err) => console.log(err))
     }
 })
 
@@ -18,6 +23,12 @@ showCopySuccess = () => {
     copyBtn.classList.add("fas", "fa-check")
 
     copyBtn.style.color = "#48bb78"
+
+    setTimeout(() => {
+        copyBtn.classList.remove("fas", "fa-check")
+        copyBtn.classList.add("fas", "fa-copy")
+        copyBtn.style.color = " "
+    }, 1500)
 }
 
 function generatePalette() {
